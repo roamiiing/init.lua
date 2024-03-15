@@ -46,6 +46,7 @@ require("lazy").setup({
 	require("plugins.treesitter"),
 	require("plugins.lspconfig"),
 	require("plugins.cmp"),
+	require("plugins.autopairs"),
 	require("plugins.conform"),
 	require("plugins.tree"),
 	require("plugins.bufferline"),
