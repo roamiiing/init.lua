@@ -105,3 +105,9 @@ set_keymap("n", "<Leader>x", close_buffer, {
 for i = 1, 9 do
 	set_keymap("n", "<Leader>" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<CR>")
 end
+
+-- git-mode (<Leader>g):
+-- toggle blame line
+set_keymap("n", "<Leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", {
+	desc = "<b>lame",
+})

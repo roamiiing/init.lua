@@ -29,6 +29,10 @@ return {
 				show_tab_indicators = false,
 				persist_buffer_sort = true,
 				separator_style = { "", "" }, -- no separators
+				indicator = {
+					icon = "",
+					style = "none",
+				},
 				enforce_regular_tabs = false,
 				always_show_bufferline = true,
 				sort_by = "id",

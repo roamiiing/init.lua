@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup_color_scheme = function()
-	vim.cmd([[colorscheme colibri]])
+	vim.cmd([[colorscheme modus]])
 end
 
 M.setup_globals = function()
@@ -14,6 +14,9 @@ M.setup_globals = function()
 	-- true color support
 	opt.termguicolors = true
 	opt.background = "dark"
+
+	-- disable annoying ~
+	vim.opt.fillchars = "eob: "
 
 	-- set leader key
 	g.mapleader = " "
@@ -34,6 +37,9 @@ M.setup_globals = function()
 
 	-- do not use system clipboard. to use system clipboard, use "+ or "*
 	opt.clipboard = ""
+
+	-- enable editorconfig
+	g.editorconfig = true
 
 	-- auto indent on line break
 	opt.breakindent = true

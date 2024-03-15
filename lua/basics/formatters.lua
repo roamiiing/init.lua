@@ -9,6 +9,8 @@ local formatters = {
 	typescriptreact = js_fmt,
 	vue = js_fmt,
 	graphql = js_fmt,
+	yaml = js_fmt,
+	markdown = js_fmt,
 }
 
 return formatters

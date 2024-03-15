@@ -13,7 +13,8 @@ require("lazy").setup({
 	"famiu/bufdelete.nvim",
 
 	{
-		"archseer/colibri.vim",
+		"miikanissi/modus-themes.nvim",
+		-- "ronisbr/nano-theme.nvim",
 		config = require("basics.options").setup_color_scheme,
 	},
 

@@ -21,6 +21,7 @@ return {
 			["<leader>w"] = { name = "<w>indow", _ = "which_key_ignore" },
 			["<leader>s"] = { name = "<s>earch", _ = "which_key_ignore" },
 			["<leader>d"] = { name = "<d>ocument", _ = "which_key_ignore" },
+			["<leader>g"] = { name = "<g>it", _ = "which_key_ignore" },
 		}
 
 		for i = 1, 9 do
