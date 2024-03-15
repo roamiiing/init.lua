@@ -14,7 +14,6 @@ require("lazy").setup({
 
 	{
 		"miikanissi/modus-themes.nvim",
-		-- "ronisbr/nano-theme.nvim",
 		config = require("basics.options").setup_color_scheme,
 	},
 

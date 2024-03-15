@@ -6,4 +6,3 @@ This is a repo with my neovim config.
 
 [ ] DAP (debugger and debugger ui)
 [ ] Snippets
-[ ] Session save and restore
