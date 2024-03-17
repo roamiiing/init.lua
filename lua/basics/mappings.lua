@@ -114,8 +114,8 @@ set_keymap("n", "<Leader>x", close_buffer, {
 	desc = "close buffer",
 })
 
-set_keymap("n", "<Leader>X", "<Cmd>bufdo bd<CR>", {
-	desc = "close all buffers",
+set_keymap("n", "<Leader>X", "<Cmd>BufferLineCloseOthers<CR>", {
+	desc = "close other buffers",
 })
 
 -- go to buffer 1-9
