@@ -3,10 +3,23 @@ local set_keymap = vim.keymap.set
 -- enter command mode with just ;
 set_keymap("n", ";", ":")
 
--- disable arrow keys
-for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>" }) do
-	set_keymap("n", key, "<Nop>")
-end
+set_keymap({ "i" }, "<C-K>", function()
+	require("luasnip").expand()
+end, { silent = true })
+
+set_keymap({ "n", "i", "s" }, "<C-N>", function()
+	require("luasnip").jump(1)
+end, { silent = true })
+
+set_keymap({ "n", "i", "s" }, "<C-P>", function()
+	require("luasnip").jump(-1)
+end, { silent = true })
+
+set_keymap({ "n", "i", "s" }, "<C-E>", function()
+	if require("luasnip").choice_active() then
+		require("luasnip").change_choice(1)
+	end
+end, { silent = true })
 
 -- clear search highlight with <Esc>
 set_keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -99,6 +112,10 @@ end
 
 set_keymap("n", "<Leader>x", close_buffer, {
 	desc = "close buffer",
+})
+
+set_keymap("n", "<Leader>X", "<Cmd>bufdo bd<CR>", {
+	desc = "close all buffers",
 })
 
 -- go to buffer 1-9
