@@ -50,4 +50,5 @@ require("lazy").setup({
 	require("plugins.tree"),
 	require("plugins.bufferline"),
 	require("plugins.mini"),
+	require("plugins.diffview"),
 })

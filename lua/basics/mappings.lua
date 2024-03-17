@@ -11,9 +11,9 @@ end
 -- clear search highlight with <Esc>
 set_keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- move between buffers with <Tab> and <S-Tab>
-set_keymap("n", "<Tab>", "<cmd>bn<CR>")
-set_keymap("n", "<S-Tab>", "<cmd>bp<CR>")
+-- move between buffers with <M-Tab> and <M-S-Tab>
+set_keymap("n", "<M-Tab>", "<cmd>bn<CR>")
+set_keymap("n", "<M-S-Tab>", "<cmd>bp<CR>")
 
 -- code-mode (<Leader>c):
 local diagnostic = vim.diagnostic
@@ -106,8 +106,38 @@ for i = 1, 9 do
 	set_keymap("n", "<Leader>" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<CR>")
 end
 
+-- tab-mode (<Leader>t):
+-- close tab
+set_keymap("n", "<Leader>tx", "<cmd>tabclose<CR>", {
+	desc = "close",
+})
+
+-- next, previous tabs
+set_keymap("n", "<Leader>tn", "<cmd>tabnext<CR>", {
+	desc = "<n>ext",
+})
+
+set_keymap("n", "<Leader>tp", "<cmd>tabprevious<CR>", {
+	desc = "<p>revious",
+})
+
+-- open (new) tab
+set_keymap("n", "<Leader>to", "<cmd>tabnew<CR>", {
+	desc = "<o>pen",
+})
+
 -- git-mode (<Leader>g):
 -- toggle blame line
 set_keymap("n", "<Leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", {
 	desc = "<b>lame",
+})
+
+-- preview current hunk inline
+set_keymap("n", "<Leader>gp", "<cmd>Gitsigns preview_hunk_inline<CR>", {
+	desc = "<p>review hunk",
+})
+
+-- diff view
+set_keymap("n", "<Leader>gd", "<cmd>DiffviewOpen<CR>", {
+	desc = "<d>iff view",
 })
