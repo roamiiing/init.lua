@@ -10,6 +10,8 @@ local get_session_path = function()
 end
 
 local save_session = function()
+	vim.cmd("NvimTreeClose")
+	vim.cmd("DiffviewClose")
 	vim.cmd("mksession! " .. get_session_path())
 end
 
@@ -32,12 +34,7 @@ local setup_autosession = function()
 	vim.fn.mkdir(SESSIONS_DIR, "p")
 
 	vim.api.nvim_create_autocmd({
-		"BufEnter",
-		"BufWinEnter",
-		"BufLeave",
-		"BufHidden",
-		"BufDelete",
-		"BufAdd",
+		"VimLeavePre",
 	}, {
 		callback = save_session,
 	})
