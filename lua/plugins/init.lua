@@ -13,12 +13,9 @@ require("lazy").setup({
 	"famiu/bufdelete.nvim",
 
 	{
-		"miikanissi/modus-themes.nvim",
+		"archseer/colibri.vim",
 		config = require("basics.options").setup_color_scheme,
 	},
-
-	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
 
 	-- Adds git related signs to the gutter, as well as utilities for managing changes
 	{
@@ -47,7 +44,6 @@ require("lazy").setup({
 	require("plugins.cmp"),
 	require("plugins.autopairs"),
 	require("plugins.conform"),
-	require("plugins.tree"),
 	require("plugins.bufferline"),
 	require("plugins.mini"),
 	require("plugins.diffview"),

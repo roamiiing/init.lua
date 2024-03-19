@@ -1,4 +1,8 @@
-return { -- Collection of various small independent plugins/modules
+local tree_filter = function(entry)
+	return entry.name ~= ".git" and entry.name ~= ".idea"
+end
+
+return {
 	"echasnovski/mini.nvim",
 	config = function()
 		-- Better Around/Inside textobjects
@@ -16,19 +20,20 @@ return { -- Collection of various small independent plugins/modules
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup()
 
+		require("mini.comment").setup()
+
 		require("mini.move").setup()
+		require("mini.files").setup({
+			use_icons = vim.g.have_nerd_font,
+			content = {
+				filter = tree_filter,
+				prefix = vim.g.have_nerd_font and require("mini.files").default_prefix or function() end,
+			},
+		})
+		require("mini.statusline").setup({
+			use_icons = vim.g.have_nerd_font,
+		})
 
-		-- Simple and easy statusline.
-		--  You could remove this setup call if you don't like it,
-		--  and try some other statusline plugin
-		local statusline = require("mini.statusline")
-		-- set use_icons to true if you have a Nerd Font
-		statusline.setup({ use_icons = vim.g.have_nerd_font })
-
-		-- set statusline to global mode
 		vim.opt.laststatus = 3
-
-		-- ... and there is more!
-		--  Check out: https://github.com/echasnovski/mini.nvim
 	end,
 }

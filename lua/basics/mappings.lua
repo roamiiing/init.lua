@@ -102,7 +102,10 @@ end
 set_keymap("n", "<Leader>ds", save_and_format_document, { desc = "<s>ave and format" })
 
 -- explorer focus
-set_keymap("n", "<Leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "<e>xplorer" })
+set_keymap("n", "<Leader>e", function()
+	MiniFiles.open(vim.api.nvim_buf_get_name(0))
+	MiniFiles.reveal_cwd()
+end, { desc = "<e>xplorer" })
 
 -- buffer manipulation
 -- close current buffer

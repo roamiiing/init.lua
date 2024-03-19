@@ -1,7 +1,8 @@
 local M = {}
 
 M.setup_color_scheme = function()
-	vim.cmd([[colorscheme modus]])
+	vim.cmd("colorscheme colibri")
+	vim.cmd("hi GitSignsCurrentLineBlame ctermfg=Black")
 end
 
 M.setup_globals = function()
@@ -23,7 +24,7 @@ M.setup_globals = function()
 	g.maplocalleader = " "
 
 	-- enable Nerd Font
-	g.have_nerd_font = true
+	g.have_nerd_font = false
 
 	-- line numbers and relative line numbers
 	opt.number = true

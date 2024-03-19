@@ -11,6 +11,7 @@ local formatters = {
 	graphql = js_fmt,
 	yaml = js_fmt,
 	markdown = js_fmt,
+	css = js_fmt,
 }
 
 return formatters
