@@ -10,7 +10,6 @@ local get_session_path = function()
 end
 
 local save_session = function()
-	vim.cmd("NvimTreeClose")
 	vim.cmd("DiffviewClose")
 	vim.cmd("mksession! " .. get_session_path())
 end

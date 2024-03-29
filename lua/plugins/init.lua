@@ -30,13 +30,14 @@ require("lazy").setup({
 			},
 		},
 	},
-
+	{ "Exafunction/codeium.vim" },
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
+
 	require("plugins.whichkey"),
 	require("plugins.telescope"),
 	require("plugins.treesitter"),
