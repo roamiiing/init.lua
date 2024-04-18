@@ -157,6 +157,11 @@ set_keymap("n", "<Leader>gp", "<cmd>Gitsigns preview_hunk_inline<CR>", {
 	desc = "<p>review hunk",
 })
 
+-- reset current hunk
+set_keymap("n", "<Leader>gr", "<cmd>Gitsigns reset_hunk<CR>", {
+	desc = "<r>eset hunk",
+})
+
 -- diff view
 set_keymap("n", "<Leader>gd", "<cmd>DiffviewOpen<CR>", {
 	desc = "<d>iff view",

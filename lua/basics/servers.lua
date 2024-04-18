@@ -30,6 +30,7 @@ local servers = {
 	gopls = {},
 	rust_analyzer = {},
 	pyright = {},
+	marksman = {},
 }
 
 return servers

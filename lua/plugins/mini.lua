@@ -29,6 +29,13 @@ return {
 				filter = tree_filter,
 				prefix = vim.g.have_nerd_font and require("mini.files").default_prefix or function() end,
 			},
+			mappings = {
+				close = "<Leader>e",
+				go_in = "L",
+				go_out = "H",
+				go_in_plus = "<Leader>l",
+				go_out_plus = "<Leader>h",
+			},
 		})
 		require("mini.statusline").setup({
 			use_icons = vim.g.have_nerd_font,
