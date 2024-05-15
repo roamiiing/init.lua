@@ -123,7 +123,12 @@ set_keymap("n", "<Leader>X", "<Cmd>BufferLineCloseOthers<CR>", {
 
 -- go to buffer 1-9
 for i = 1, 9 do
-	set_keymap("n", "<Leader>" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<CR>")
+	set_keymap("n", "<Leader>" .. i, function()
+		if MiniFiles then
+			MiniFiles.close()
+		end
+		require("bufferline").go_to(i, true)
+	end)
 end
 
 -- tab-mode (<Leader>t):

@@ -48,4 +48,6 @@ require("lazy").setup({
 	require("plugins.bufferline"),
 	require("plugins.mini"),
 	require("plugins.diffview"),
+	require("plugins.dadbod"),
+	--	require("plugins.presence"),
 })

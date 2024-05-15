@@ -30,11 +30,11 @@ return {
 				prefix = vim.g.have_nerd_font and require("mini.files").default_prefix or function() end,
 			},
 			mappings = {
-				close = "<Leader>e",
+				close = "<Esc>",
 				go_in = "L",
 				go_out = "H",
-				go_in_plus = "<Leader>l",
-				go_out_plus = "<Leader>h",
+				go_in_plus = "<CR>",
+				go_out_plus = "<BS>",
 			},
 		})
 		require("mini.statusline").setup({

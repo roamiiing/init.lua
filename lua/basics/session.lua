@@ -9,9 +9,15 @@ local get_session_path = function()
 	return SESSIONS_DIR .. "/" .. cwd .. ".vim"
 end
 
+local save_session_raw = function()
+	vim.cmd("mksession! " .. get_session_path())
+end
+
 local save_session = function()
 	vim.cmd("DiffviewClose")
-	vim.cmd("mksession! " .. get_session_path())
+	vim.cmd("DBUIClose")
+
+	save_session_raw()
 end
 
 local restore_session = function()
@@ -42,5 +48,8 @@ local setup_autosession = function()
 end
 
 M.setup = setup_autosession
+M.save = save_session
+M.save_raw = save_session_raw
+M.restore = restore_session
 
 return M

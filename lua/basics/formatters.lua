@@ -12,6 +12,8 @@ local formatters = {
 	yaml = js_fmt,
 	markdown = js_fmt,
 	css = js_fmt,
+	prisma = js_fmt,
+	json = js_fmt,
 }
 
 return formatters
