@@ -1,5 +1,13 @@
 local set_keymap = vim.keymap.set
 
+local get_telescope_theme = function()
+	return require("telescope.themes").get_ivy({})
+end
+
+local search_files = function()
+	require("telescope.builtin").find_files(get_telescope_theme())
+end
+
 -- enter command mode with just ;
 set_keymap("n", ";", ":")
 
@@ -28,6 +36,22 @@ set_keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")
 set_keymap("n", "<M-Tab>", "<cmd>bn<CR>")
 set_keymap("n", "<M-S-Tab>", "<cmd>bp<CR>")
 
+-- on <Leader><Leader> go to next window. If there's only one
+-- window, create a new one vertically splitted
+local next_window_or_create = function()
+	local count = vim.fn.winnr("$")
+
+	if count == 1 then
+		vim.cmd("vsplit")
+	else
+		vim.cmd("wincmd w")
+	end
+end
+
+set_keymap("n", "<Leader><Leader>", next_window_or_create, {
+	desc = "next window or new one",
+})
+
 -- code-mode (<Leader>c):
 local diagnostic = vim.diagnostic
 
@@ -53,14 +77,7 @@ set_keymap("n", "<Leader>cp", diagnostic.goto_prev, {
 set_keymap("n", "<Leader>w", "<C-w>")
 
 -- search-mode (<Leader>s):
-local get_telescope_theme = function()
-	return require("telescope.themes").get_ivy({})
-end
-
 -- search files
-local search_files = function()
-	require("telescope.builtin").find_files(get_telescope_theme())
-end
 set_keymap("n", "<Leader>sf", search_files, { desc = "<f>iles" })
 
 -- search buffers

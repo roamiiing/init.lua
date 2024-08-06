@@ -1,3 +1,5 @@
+local lspconfig = require("lspconfig")
+
 local servers = {
 	-- clangd = {},
 	-- gopls = {},
@@ -26,11 +28,17 @@ local servers = {
 			},
 		},
 	},
-	tsserver = {},
 	gopls = {},
 	rust_analyzer = {},
 	pyright = {},
 	marksman = {},
+	tsserver = {
+		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+		single_file_support = false,
+	},
+	denols = {
+		root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+	},
 }
 
 return servers
