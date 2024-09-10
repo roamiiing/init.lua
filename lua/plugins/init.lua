@@ -14,8 +14,6 @@ require("lazy").setup({
 
 	{
 		"archseer/colibri.vim",
-		-- "slugbyte/lackluster.nvim",
-		-- "miikanissi/modus-themes.nvim",
 		config = require("basics.options").setup_color_scheme,
 	},
 

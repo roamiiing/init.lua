@@ -10,6 +10,7 @@ local formatters = {
 	vue = js_fmt,
 	graphql = js_fmt,
 	yaml = js_fmt,
+	toml = { "taplo" },
 	markdown = js_fmt,
 	css = js_fmt,
 	prisma = js_fmt,

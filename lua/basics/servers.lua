@@ -28,7 +28,28 @@ local servers = {
 			},
 		},
 	},
-	gopls = {},
+	gopls = {
+		root_dir = lspconfig.util.root_pattern("go.mod"),
+
+		-- See https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+		settings = {
+			gopls = {
+				analyses = {
+					unusedparams = true,
+				},
+				staticcheck = true,
+			},
+		},
+	},
+	yamlls = {
+		settings = {
+			yaml = {
+				schemas = {
+					["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+				},
+			},
+		},
+	},
 	rust_analyzer = {},
 	pyright = {},
 	marksman = {},
