@@ -53,7 +53,7 @@ local servers = {
 	rust_analyzer = {},
 	pyright = {},
 	marksman = {},
-	tsserver = {
+	ts_ls = {
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
 		single_file_support = false,
 	},

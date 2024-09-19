@@ -13,7 +13,7 @@ require("lazy").setup({
 	"famiu/bufdelete.nvim",
 
 	{
-		"archseer/colibri.vim",
+		"miikanissi/modus-themes.nvim",
 		config = require("basics.options").setup_color_scheme,
 	},
 
@@ -38,7 +38,7 @@ require("lazy").setup({
 		opts = { signs = false },
 	},
 
-	require("plugins.whichkey"),
+	require("plugins.mini"),
 	require("plugins.telescope"),
 	require("plugins.treesitter"),
 	require("plugins.lspconfig"),
@@ -46,7 +46,6 @@ require("lazy").setup({
 	require("plugins.autopairs"),
 	require("plugins.conform"),
 	require("plugins.bufferline"),
-	require("plugins.mini"),
 	require("plugins.diffview"),
 	require("plugins.dadbod"),
 })

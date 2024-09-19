@@ -74,7 +74,9 @@ set_keymap("n", "<Leader>cp", diagnostic.goto_prev, {
 })
 
 -- window-mode (<Leader>w):
-set_keymap("n", "<Leader>w", "<C-w>")
+set_keymap("n", "<Leader>w", "<C-w>", {
+	desc = "<w>indow",
+})
 
 -- search-mode (<Leader>s):
 -- search files
